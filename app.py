@@ -16,6 +16,16 @@ def save_blog_posts(posts):
         json.dump(posts, fileobj)
 
 
+def fetch_post_by_id(post_id):
+    """Fetch blog posts per ID"""
+    blog_posts = load_posts()
+    for post in blog_posts:
+        if post['id'] == post_id:
+            return post
+    return None
+
+
+
 @app.route('/greeting')
 def hello_world():
     return 'Hello, World!'
@@ -46,6 +56,16 @@ def add():
        return redirect(url_for('index'))
 
     return render_template('add.html')
+
+@app.route('/delete/<int:post_id>')
+def delete(post_id):
+
+    blog_posts = load_posts()
+    updated_posts = [post for post in blog_posts if post['id'] != post_id]
+
+    save_blog_posts(updated_posts)
+    return redirect(url_for('index'))
+
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=4999, debug=True)
