@@ -25,3 +25,37 @@ h1 {
 .post p {
     margin: 10px 0;
 }
+
+/* General button style */
+a.button, input[type="submit"] {
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 4px;
+    background-color: #007BFF;   /* Bootstrap blue */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Red delete button */
+a.button.delete {
+    background-color: #dc3545;
+}
+
+/* Green update button */
+a.button.update {
+    background-color: #28a745;
+}
+
+/* Gray cancel/back button */
+a.button.cancel {
+    background-color: #6c757d;
+}
+
+.button.like {
+    background-color: #ffc107;  /* yellow-ish */
+    color: black;
+}
