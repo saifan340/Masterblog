@@ -40,19 +40,51 @@ a.button, input[type="submit"] {
     font-size: 14px;
 }
 
-/* Red delete button */
-a.button.delete {
+.button-group {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.button-group form {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Red delete button for <button> and <input> */
+.button.delete, input[type="submit"].delete {
     background-color: #dc3545;
+    color: white;
+}
+
+/* Optional: hover effect for delete */
+.button.delete:hover, input[type="submit"].delete:hover {
+    background-color: #c82333;
 }
 
 /* Green update button */
-a.button.update {
+.button.update {
     background-color: #28a745;
-}
+    color: white;
+    padding: 6px 8px;
+    font-size: 10px;
+    border: 2px solid black;
+    border-radius: 2px;
+    cursor: pointer;
+}   margin-bottom: 20px;
 
-/* Gray cancel/back button */
-a.button.cancel {
-    background-color: #6c757d;
+
+.button.cancel {
+    background-color: #6c757d;  /* Bootstrap gray */
+    color: white;
+    padding: 10px 16px;
+    font-size: 16px;
+    border: 2px solid black;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 20px;
 }
 
 .button.like {
